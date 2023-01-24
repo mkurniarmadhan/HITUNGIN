@@ -168,9 +168,9 @@
                                             <div class="dropdown-divider"></div>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="auth-login-basic.html">
+                                            <a class="dropdown-item" href="#">
                                                 <i class="bx bx-power-off me-2"></i>
-                                                <span class="align-middle">Log Out</span>
+                                                <span class="align-middle">Keluar</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -195,27 +195,23 @@
                                         <!-- List group with Badges & Pills -->
                                         <div class="col-lg-12">
                                             <div class="demo-inline-spacing mt-3">
-                                                <ul class="list-group">
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <ul class="list-group lisItems">
+                                                    <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
                                                         <div class="text d-flex flex-column">
                                                             Lemon
-                                                            <span class="badge bg-primary">Rp. 10.0000</span>
+                                                            <span class="badge bg-primary hrg">Rp. 10.0000</span>
                                                         </div>
 
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button type="button" class="btn btn-outline-secondary">-</button>
-                                                            <input readonly style="width: 45px; text-align: center" id="smallInput" placeholder="2" class="form-control form-control-sm mx-2" type="text" />
-                                                            <button type="button" class="btn btn-outline-secondary">+</button>
+                                                            <button type="button" id="sub" class="sub btn btn-outline-secondary">-</button>
+                                                            <input type="number" style="width: 65px; text-align: center" class="form-control form-control-sm mx-2" id="1" value="1" />
+                                                            <button type="button" id="add" class="add btn btn-outline-secondary">+</button>
                                                         </div>
-                                                    </li>
+                                                    </li> -->
                                                 </ul>
                                             </div>
-                                            <div class="divider text-end-center">
-                                                <div class="divider-text">total bayar</div>
-                                            </div>
-                                            <div class="total-belanj d-flex justify-content-between">
-                                                <h3>Total Bayar</h3>
-                                                <h3>Rp,00000</h3>
+                                            <div class="divider text-end-center rincian-belanja">
+                                                <div class="divider-text">rincian pembayaran</div>
                                             </div>
                                         </div>
                                         <!--/ List group with Badges & Pills -->
@@ -228,18 +224,17 @@
                             <!-- pembayaran  -->
                             <div class="row">
                                 <h1 class="text-success fw-semibold">PEMBAYARAN</h1>
-
                                 <div class="demo-inline-spacing">
-                                    <button type="button" class="btn btn-outline-primary">Uang Pas</button>
-                                    <button type="button" class="btn btn-outline-secondary">Rp. 10.000,-</button>
+                                    <button type="button" id="uangpas" class="btn btn-outline-primary">Uang Pas</button>
+                                    <button type="button" id="genap1" class="btn btn-outline-secondary">Rp. 10.000,-</button>
                                 </div>
                                 <div class="row mt-5">
                                     <div class="mb-3 col-12">
-                                        <input type="number" autofocus="true" placeholder="cari transaksi..." class="form-control" id="caritarnsaksi" />
+                                        <input type="number" autofocus="true" placeholder="masukan jumlah uang" class="form-control" id="jumlahuang" />
                                     </div>
                                 </div>
                                 <div class="mt-5">
-                                    <button class="btn btn-danger btn-buy-now w-100">PROSES</button>
+                                    <button class="btn btn-danger btn-buy-now w-100 btn-proses">PROSES</button>
                                 </div>
                             </div>
                             <!-- / pembayaran  -->
@@ -270,12 +265,149 @@
         <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
         <script src="../assets/vendor/js/menu.js"></script>
+
+        <script>
+            var Keranjang = (function () {
+                var objReturn = {};
+                const STORAGE_NAME = "__mycart";
+
+                localStorage[STORAGE_NAME] = localStorage[STORAGE_NAME] ? localStorage[STORAGE_NAME] : "";
+                var itemsId = function (id) {
+                    var itemIndex = -1;
+                    var items = getAllItems();
+                    $.each(items, function (index, value) {
+                        if (value.id === id) {
+                            itemIndex = index;
+                            return;
+                        }
+                    });
+                    return itemIndex;
+                };
+                var setAllProducts = function (products) {
+                    localStorage[STORAGE_NAME] = JSON.stringify(products);
+                };
+                // public get
+                var getAllItems = function () {
+                    try {
+                        var items = JSON.parse(localStorage[STORAGE_NAME]);
+                        return items;
+                    } catch (e) {
+                        return [];
+                    }
+                };
+                var getSubTotal = function () {
+                    var products = getAllItems();
+                    var total = 0;
+                    $.each(products, function (index, value) {
+                        total += value.quantity * value.price;
+                        total = total * 1;
+                    });
+                    return total;
+                };
+                var updatePoduct = function (id, quantity, increaseQuantity) {
+                    var productIndex = itemsId(id);
+                    if (productIndex < 0) {
+                        return false;
+                    }
+                    var products = getAllItems();
+                    if (increaseQuantity) {
+                        products[productIndex].quantity = products[productIndex].quantity * 1 + (typeof quantity === "undefined" ? 1 : quantity * 1);
+                    } else {
+                        products[productIndex].quantity = typeof quantity === "undefined" ? products[productIndex].quantity * 1 + 1 : quantity * 1;
+                    }
+                    setAllProducts(products);
+                    return true;
+                };
+                var getTotalPrice = function () {
+                    var products = getAllItems();
+                    var total = 0;
+                    $.each(products, function (index, value) {
+                        total += value.quantity * value.price;
+                        total = total * 1;
+                    });
+                    return total;
+                };
+                objReturn.getTotalPrice = getTotalPrice;
+                objReturn.updatePoduct = updatePoduct;
+                objReturn.getAllItems = getAllItems;
+                objReturn.itemsId = itemsId;
+                objReturn.getSubTotal = getSubTotal;
+                return objReturn;
+            })();
+
+            // list Items
+            var listItems = function () {
+                const $lisItems = $(".lisItems");
+                const rincian = $(".rincian-belanja");
+
+                var items = Keranjang.getAllItems();
+
+                $.each(items, function () {
+                    $lisItems.append(`
+                                      <li class="list-group-item d-flex justify-content-between align-items-center  " data-id="${this.id}" data-hrg="${this.price}">
+                                          <div class="text d-flex flex-column">${this.name}<span class="badge bg-primary hrg">Rp. ${this.price}</span>
+                                          </div>
+                                          <div class="btn-group" role="group" aria-label="Basic example">
+
+                                              <button class="btn btn-outline-secondary classProductTotal${this.id}" disabled>Rp. ${Number(this.price) * Number(this.quantity)}</button>
+                                              <input   type="number" style="width: 65px; text-align: center" class="form-control classProductQuantity form-control-sm mx-2 " min="1" value="${this.quantity}" />
+                                           </div>
+                                      </li>
+                              `);
+                });
+
+                rincian.append(`
+                              <div class="total-belanja d-flex justify-content-between">
+                                  <h5>Sub Total</h5>
+                                  <h3 id="subtotal">${Keranjang.getSubTotal()}</h3>
+                              </div>
+                              <div class="total-belanja d-flex justify-content-between">
+                                  <h5>Cash</h5>
+                                  <h3 id="subtotal">0</h3>
+                              </div>
+                              `);
+            };
+
+            var total = 10000;
+
+            console.log((total / 1000).toFixed(3));
+
+            var updateCart = function () {
+                $.each($(".classProductQuantity"), function () {
+                    var id = $(this).closest("li").data("id");
+                    Keranjang.updatePoduct(id, $(this).val());
+                });
+            };
+            var getSubTotal = function () {
+                $("#subtotal").text(Keranjang.getSubTotal);
+            };
+
+            $(document).on("input", ".classProductQuantity", function () {
+                var price = $(this).closest("li").data("hrg");
+                var id = $(this).closest("li").data("id");
+                var quantity = $(this).val();
+                $(this)
+                    .parent("button")
+                    .add(`.classProductTotal${id}`)
+                    .text(`Rp. ${price * quantity} `);
+                Keranjang.updatePoduct(id, quantity);
+                getSubTotal();
+            });
+
+            $(document).on("keypress", ".classProductQuantity", function (evt) {
+                if (evt.keyCode >= 48 && evt.keyCode <= 57) {
+                    return;
+                }
+                evt.preventDefault();
+            });
+
+            updateCart();
+            listItems();
+            getSubTotal();
+        </script>
         <!-- endbuild -->
 
         <!-- Main JS -->
         <script src="../assets/js/main.js"></script>
-
-        <!-- Page JS -->
-        <script src="../assets/js/dashboards-analytics.js"></script>
     </body>
 </html>
