@@ -58,7 +58,7 @@
 
                     <ul class="menu-inner py-1">
                         <!-- Dashboard -->
-                        <li class="menu-item">
+                        <li class="menu-item active">
                             <a href="home.html" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                                 <div data-i18n="Analytics">Dashboard</div>
@@ -92,7 +92,7 @@
                         <li class="menu-header small text-uppercase">
                             <span class="menu-header-text">Transaksi </span>
                         </li>
-                        <li class="menu-item active">
+                        <li class="menu-item">
                             <a href="riwayattransaksi.html" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-file"></i>
                                 <div data-i18n="Documentation">Documentation</div>
@@ -225,12 +225,12 @@
                             <div class="row">
                                 <h1 class="text-success fw-semibold">PEMBAYARAN</h1>
                                 <div class="demo-inline-spacing">
-                                    <button type="button" id="uangpas" class="btn btn-outline-primary">Uang Pas</button>
-                                    <button type="button" id="genap1" class="btn btn-outline-secondary">Rp. 10.000,-</button>
+                                    <button type="radio" id="uanguang" value="60000" class="btn btn-outline-primary">Uang Pas</button>
+                                    <button type="radio" id="uanguang" value="10000" class="btn btn-outline-secondary">Rp. 10.000,-</button>
                                 </div>
                                 <div class="row mt-5">
                                     <div class="mb-3 col-12">
-                                        <input type="number" autofocus="true" placeholder="masukan jumlah uang" class="form-control" id="jumlahuang" />
+                                        <input type="number" autofocus="true" placeholder="masukan jumlah uang" class="form-control jumlahuang" />
                                     </div>
                                 </div>
                                 <div class="mt-5">
@@ -268,9 +268,9 @@
 
         <script>
             var Keranjang = (function () {
+                // storage
                 var objReturn = {};
                 const STORAGE_NAME = "__mycart";
-
                 localStorage[STORAGE_NAME] = localStorage[STORAGE_NAME] ? localStorage[STORAGE_NAME] : "";
                 var itemsId = function (id) {
                     var itemIndex = -1;
@@ -286,7 +286,7 @@
                 var setAllProducts = function (products) {
                     localStorage[STORAGE_NAME] = JSON.stringify(products);
                 };
-                // public get
+
                 var getAllItems = function () {
                     try {
                         var items = JSON.parse(localStorage[STORAGE_NAME]);
@@ -327,7 +327,9 @@
                     });
                     return total;
                 };
+
                 objReturn.getTotalPrice = getTotalPrice;
+
                 objReturn.updatePoduct = updatePoduct;
                 objReturn.getAllItems = getAllItems;
                 objReturn.itemsId = itemsId;
@@ -344,33 +346,29 @@
 
                 $.each(items, function () {
                     $lisItems.append(`
-                                      <li class="list-group-item d-flex justify-content-between align-items-center  " data-id="${this.id}" data-hrg="${this.price}">
-                                          <div class="text d-flex flex-column">${this.name}<span class="badge bg-primary hrg">Rp. ${this.price}</span>
-                                          </div>
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-
-                                              <button class="btn btn-outline-secondary classProductTotal${this.id}" disabled>Rp. ${Number(this.price) * Number(this.quantity)}</button>
-                                              <input   type="number" style="width: 65px; text-align: center" class="form-control classProductQuantity form-control-sm mx-2 " min="1" value="${this.quantity}" />
-                                           </div>
-                                      </li>
-                              `);
+                                                  <li class="list-group-item d-flex justify-content-between align-items-center  " data-id="${this.id}" data-hrg="${this.price}">
+                                                      <div class="text d-flex flex-column">${this.name}<span class="badge bg-primary hrg">Rp ${(this.price / 1000).toFixed(3)}</span>
+                                                      </div>
+                                                      <div class="btn-group" role="group" aria-label="Basic example">
+                                                          <button class="btn btn-outline-secondary classProductTotal${this.id}" disabled>Rp ${((this.price * this.quantity) / 1000).toFixed(3)}</button>
+                                                          <input   type="number" style="width: 65px; text-align: center" class="form-control classProductQuantity form-control-sm mx-2 " min="1" value="${this.quantity}" />
+                                                       </div>
+                                                  </li>
+                                          `);
                 });
 
                 rincian.append(`
-                              <div class="total-belanja d-flex justify-content-between">
-                                  <h5>Sub Total</h5>
-                                  <h3 id="subtotal">${Keranjang.getSubTotal()}</h3>
-                              </div>
-                              <div class="total-belanja d-flex justify-content-between">
-                                  <h5>Cash</h5>
-                                  <h3 id="subtotal">0</h3>
-                              </div>
-                              `);
+                                          <div class="total-belanja d-flex justify-content-between">
+                                              <h5>Sub Total</h5>
+                                              <h3 id="subtotal">${Keranjang.getTotalPrice()}</h3>
+                                          </div>
+                                          <div class="total-belanja d-flex justify-content-between">
+                                              <h5>Cash</h5>
+                                              <h3 id="cash"></h3>
+                                          </div>
+
+                                          `);
             };
-
-            var total = 10000;
-
-            console.log((total / 1000).toFixed(3));
 
             var updateCart = function () {
                 $.each($(".classProductQuantity"), function () {
@@ -379,9 +377,10 @@
                 });
             };
             var getSubTotal = function () {
-                $("#subtotal").text(Keranjang.getSubTotal);
+                $("#subtotal").text(`Rp ${(Keranjang.getSubTotal() / 1000).toFixed(3)}`);
             };
 
+            //tambah banyak barang
             $(document).on("input", ".classProductQuantity", function () {
                 var price = $(this).closest("li").data("hrg");
                 var id = $(this).closest("li").data("id");
@@ -389,16 +388,30 @@
                 $(this)
                     .parent("button")
                     .add(`.classProductTotal${id}`)
-                    .text(`Rp. ${price * quantity} `);
+                    .text(`Rp. ${((price * quantity) / 1000).toFixed(3)} `);
                 Keranjang.updatePoduct(id, quantity);
                 getSubTotal();
             });
-
             $(document).on("keypress", ".classProductQuantity", function (evt) {
                 if (evt.keyCode >= 48 && evt.keyCode <= 57) {
                     return;
                 }
                 evt.preventDefault();
+            });
+            // / tambah banyak barang
+
+            // pemabayran
+            $(document).on("input", ".jumlahuang", function () {
+                var quantity = $(this).val();
+                $(this)
+                    .parent("h3")
+                    .add("#cash")
+                    .text(`Rp. ${(quantity / 1000).toFixed(3)} `);
+            });
+            $(document).on("click", "#uanguang", function () {
+                var quantity = $(this).val();
+                $(".jumlahuang").val(quantity);
+                console.log(quantity);
             });
 
             updateCart();
