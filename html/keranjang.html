@@ -1,426 +1,392 @@
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
-        <title>Hitungin</title>
+    <title>Hitungin- Keranjang</title>
 
-        <meta name="description" content="hitungin - kasir app" />
+    <meta name="description" content="hitungin - kasir app" />
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/img/favicon/favicon.ico"
+    />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- Icons. Uncomment required icon fonts -->
-        <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
 
-        <!-- Core CSS -->
-        <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-        <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <!-- Core CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/css/core.css"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/css/theme-default.css"
+      class="template-customizer-theme-css"
+    />
 
-        <!-- Vendors CSS -->
-        <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <!-- Vendors CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
+    />
 
-        <!-- Page CSS -->
+    <!-- Page CSS -->
 
-        <!-- Helpers -->
-        <script src="../assets/vendor/js/helpers.js"></script>
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
 
-        <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-        <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-        <script src="../assets/js/config.js"></script>
-    </head>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+  </head>
 
-    <body>
-        <!-- Layout wrapper -->
-        <div class="layout-wrapper layout-content-navbar">
-            <div class="layout-container">
-                <!-- Menu -->
-                <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                    <div class="app-brand demo my-5" sty>
-                        <a href="home.html" class="app-brand-link">
-                            <span class="app-brand-logo demo"> </span>
-                            <span class="app-brand-text demo menu-text fw-bolder ms-2">HITUNGIN APP</span>
-                        </a>
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+        <aside
+          id="layout-menu"
+          class="layout-menu menu-vertical menu bg-menu-theme"
+        >
+          <div class="app-brand demo my-5" sty>
+            <a href="home.html" class="app-brand-link">
+              <span class="app-brand-logo demo"> </span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2"
+                >HITUNGIN APP</span
+              >
+            </a>
 
-                        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-                            <i class="bx bx-chevron-left bx-sm align-middle"></i>
-                        </a>
-                    </div>
+            <a
+              href="javascript:void(0);"
+              class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none"
+            >
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
 
-                    <div class="menu-inner-shadow"></div>
+          <div class="menu-inner-shadow"></div>
 
-                    <ul class="menu-inner py-1">
-                        <!-- Dashboard -->
-                        <li class="menu-item active">
-                            <a href="home.html" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                                <div data-i18n="Analytics">Dashboard</div>
-                            </a>
-                        </li>
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item active">
+              <a href="home.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Dashboard</div>
+              </a>
+            </li>
 
-                        <!-- Misc -->
-                        <li class="menu-header small text-uppercase">
-                            <span class="menu-header-text">master data</span>
-                        </li>
-                        <li class="menu-item">
-                            <a href="tambahbarang.html" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-file"></i>
-                                <div data-i18n="Support">Tambah data Barang</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="tambahstokbarang.html" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-file"></i>
-                                <div data-i18n="Support">Tambah stok Barang</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="tambahsuplier.html" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-file"></i>
-                                <div data-i18n="Support">Suplier Barang</div>
-                            </a>
-                        </li>
+            <!-- Misc -->
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">master data</span>
+            </li>
+            <li class="menu-item">
+              <a href="tambahbarang.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Support">Tambah data Barang</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="tambahstokbarang.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Support">Tambah stok Barang</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="tambahsuplier.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Support">Suplier Barang</div>
+              </a>
+            </li>
 
-                        <!-- Misc -->
-                        <li class="menu-header small text-uppercase">
-                            <span class="menu-header-text">Transaksi </span>
-                        </li>
-                        <li class="menu-item">
-                            <a href="riwayattransaksi.html" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-file"></i>
-                                <div data-i18n="Documentation">Documentation</div>
-                            </a>
-                        </li>
-                    </ul>
-                </aside>
-                <!-- / Menu -->
+            <!-- Misc -->
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Transaksi </span>
+            </li>
+            <li class="menu-item">
+              <a href="riwayattransaksi.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Documentation">Documentation</div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <!-- / Menu -->
 
-                <!-- Layout container -->
-                <div class="layout-page">
-                    <!-- Navbar -->
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
 
-                    <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
-                        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-                            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                                <i class="bx bx-menu bx-sm"></i>
-                            </a>
-                        </div>
-
-                        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                            <ul class="navbar-nav flex-row align-items-center ms-auto">
-                                <!-- Place this tag where you want the button to render. -->
-
-                                <!-- User -->
-                                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                        <div class="avatar avatar-online">
-                                            <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                        </div>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <div class="d-flex">
-                                                    <div class="flex-shrink-0 me-3">
-                                                        <div class="avatar avatar-online">
-                                                            <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <span class="fw-semibold d-block">John Doe</span>
-                                                        <small class="text-muted">Admin</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="dropdown-divider"></div>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="bx bx-user me-2"></i>
-                                                <span class="align-middle">My Profile</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="bx bx-cog me-2"></i>
-                                                <span class="align-middle">Settings</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <span class="d-flex align-items-center align-middle">
-                                                    <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                                    <span class="flex-grow-1 align-middle">Billing</span>
-                                                    <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="dropdown-divider"></div>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="bx bx-power-off me-2"></i>
-                                                <span class="align-middle">Keluar</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <!--/ User -->
-                            </ul>
-                        </div>
-                    </nav>
-
-                    <!-- / Navbar -->
-
-                    <!-- Content wrapper -->
-                    <div class="content-wrapper">
-                        <!-- Content -->
-
-                        <div class="container-xxl flex-grow-1 container-p-y">
-                            <!-- rincian belajn -->
-                            <div class="card mb-5">
-                                <h5 class="card-header">Rincian Belanja</h5>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <!-- List group with Badges & Pills -->
-                                        <div class="col-lg-12">
-                                            <div class="demo-inline-spacing mt-3">
-                                                <ul class="list-group lisItems">
-                                                    <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <div class="text d-flex flex-column">
-                                                            Lemon
-                                                            <span class="badge bg-primary hrg">Rp. 10.0000</span>
-                                                        </div>
-
-                                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button type="button" id="sub" class="sub btn btn-outline-secondary">-</button>
-                                                            <input type="number" style="width: 65px; text-align: center" class="form-control form-control-sm mx-2" id="1" value="1" />
-                                                            <button type="button" id="add" class="add btn btn-outline-secondary">+</button>
-                                                        </div>
-                                                    </li> -->
-                                                </ul>
-                                            </div>
-                                            <div class="divider text-end-center rincian-belanja">
-                                                <div class="divider-text">rincian pembayaran</div>
-                                            </div>
-                                        </div>
-                                        <!--/ List group with Badges & Pills -->
-                                    </div>
-                                </div>
-                                <hr class="m-0" />
-                            </div>
-                            <!-- / rincian belanja -->
-
-                            <!-- pembayaran  -->
-                            <div class="row">
-                                <h1 class="text-success fw-semibold">PEMBAYARAN</h1>
-                                <div class="demo-inline-spacing">
-                                    <button type="radio" id="uanguang" value="60000" class="btn btn-outline-primary">Uang Pas</button>
-                                    <button type="radio" id="uanguang" value="10000" class="btn btn-outline-secondary">Rp. 10.000,-</button>
-                                </div>
-                                <div class="row mt-5">
-                                    <div class="mb-3 col-12">
-                                        <input type="number" autofocus="true" placeholder="masukan jumlah uang" class="form-control jumlahuang" />
-                                    </div>
-                                </div>
-                                <div class="mt-5">
-                                    <button class="btn btn-danger btn-buy-now w-100 btn-proses">PROSES</button>
-                                </div>
-                            </div>
-                            <!-- / pembayaran  -->
-                        </div>
-                        <!-- / Content -->
-
-                        <div class="content-backdrop fade"></div>
-                    </div>
-                    <!-- Content wrapper -->
-                </div>
-                <!-- / Layout page -->
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div
+              class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none"
+            >
+              <a
+                class="nav-item nav-link px-0 me-xl-4"
+                href="javascript:void(0)"
+              >
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
             </div>
 
-            <!-- Overlay -->
-            <div class="layout-overlay layout-menu-toggle"></div>
+            <div
+              class="navbar-nav-right d-flex align-items-center"
+              id="navbar-collapse"
+            >
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!-- Place this tag where you want the button to render. -->
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                  >
+                    <div class="avatar avatar-online">
+                      <img
+                        src="../assets/img/avatars/1.png"
+                        alt
+                        class="w-px-40 h-auto rounded-circle"
+                      />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img
+                                src="../assets/img/avatars/1.png"
+                                alt
+                                class="w-px-40 h-auto rounded-circle"
+                              />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">John Doe</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="d-flex align-items-center align-middle">
+                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                          <span class="flex-grow-1 align-middle">Billing</span>
+                          <span
+                            class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"
+                            >4</span
+                          >
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle">Keluar</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <!-- rincian belajn -->
+              <div class="card mb-5">
+                <h5 class="card-header">Rincian Belanja</h5>
+                <div class="card-body">
+                  <div class="row">
+                    <!-- List group with Badges & Pills -->
+                    <div class="col-lg-12">
+                      <div class="demo-inline-spacing mt-3">
+                        <ul class="list-group lisItems">
+                          <li
+                            class="list-group-item d-flex justify-content-between align-items-center"
+                            data-id="${
+                                                        this.id
+                                                      }"
+                            data-hrg="${this.price}"
+                          >
+                            <div class="text d-flex flex-column">
+                              Nama Brang<span class="badge bg-primary hrg"
+                                >Rp 80.000,-</span
+                              >
+                            </div>
+                            <div
+                              class="btn-group"
+                              role="group"
+                              aria-label="Basic example"
+                            >
+                              <button
+                                class="btn btn-outline-secondary classProductTotal${ this.id }"
+                                disabled
+                              >
+                                Rp (harga* jumlah)
+                              </button>
+                              <input
+                                type="number"
+                                style="width: 65px; text-align: center"
+                                class="form-control classProductQuantity form-control-sm mx-2"
+                                min="1"
+                                value="2"
+                              />
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="divider text-end-center rincian-belanja">
+                        <div class="divider-text">rincian pembayaran</div>
+                        <div
+                          class="total-belanja d-flex justify-content-between"
+                        >
+                          <h5>Sub Total</h5>
+                          <h3 id="subtotal">Rincain</h3>
+                        </div>
+                        <div
+                          class="total-belanja d-flex justify-content-between"
+                        >
+                          <h5>Cash</h5>
+                          <h3 id="cash"></h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!--/ List group with Badges & Pills -->
+                  </div>
+                </div>
+                <hr class="m-0" />
+              </div>
+              <!-- / rincian belanja -->
+
+              <!-- pembayaran  -->
+              <div class="row">
+                <h1 class="text-success fw-semibold">PEMBAYARAN</h1>
+                <div class="demo-inline-spacing">
+                  <button
+                    type="radio"
+                    id="uanguang"
+                    value="60000"
+                    class="btn btn-outline-primary"
+                  >
+                    Uang Pas
+                  </button>
+                  <button
+                    type="radio"
+                    id="uanguang"
+                    value="10000"
+                    class="btn btn-outline-secondary"
+                  >
+                    Rp. 10.000,-
+                  </button>
+                </div>
+                <div class="row mt-5">
+                  <div class="mb-3 col-12">
+                    <input
+                      type="number"
+                      autofocus="true"
+                      placeholder="masukan jumlah uang"
+                      class="form-control jumlahuang"
+                    />
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <a
+                    href="sukses.html"
+                    class="btn btn-danger btn-buy-now w-100 btn-proses"
+                  >
+                    PROSES
+                  </a>
+                </div>
+              </div>
+              <!-- / pembayaran  -->
+            </div>
+            <!-- / Content -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
         </div>
-        <!-- / Layout wrapper -->
+        <!-- / Layout page -->
+      </div>
 
-        <!-- Order -->
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
 
-        <!-- / order -->
+    <!-- Order -->
 
-        <!-- Core JS -->
-        <!-- build:js assets/vendor/js/core.js -->
-        <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-        <script src="../assets/vendor/libs/popper/popper.js"></script>
-        <script src="../assets/vendor/js/bootstrap.js"></script>
-        <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <!-- / order -->
 
-        <script src="../assets/vendor/js/menu.js"></script>
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-        <script>
-            var Keranjang = (function () {
-                // storage
-                var objReturn = {};
-                const STORAGE_NAME = "__mycart";
-                localStorage[STORAGE_NAME] = localStorage[STORAGE_NAME] ? localStorage[STORAGE_NAME] : "";
-                var itemsId = function (id) {
-                    var itemIndex = -1;
-                    var items = getAllItems();
-                    $.each(items, function (index, value) {
-                        if (value.id === id) {
-                            itemIndex = index;
-                            return;
-                        }
-                    });
-                    return itemIndex;
-                };
-                var setAllProducts = function (products) {
-                    localStorage[STORAGE_NAME] = JSON.stringify(products);
-                };
+    <script src="../assets/vendor/js/menu.js"></script>
 
-                var getAllItems = function () {
-                    try {
-                        var items = JSON.parse(localStorage[STORAGE_NAME]);
-                        return items;
-                    } catch (e) {
-                        return [];
-                    }
-                };
-                var getSubTotal = function () {
-                    var products = getAllItems();
-                    var total = 0;
-                    $.each(products, function (index, value) {
-                        total += value.quantity * value.price;
-                        total = total * 1;
-                    });
-                    return total;
-                };
-                var updatePoduct = function (id, quantity, increaseQuantity) {
-                    var productIndex = itemsId(id);
-                    if (productIndex < 0) {
-                        return false;
-                    }
-                    var products = getAllItems();
-                    if (increaseQuantity) {
-                        products[productIndex].quantity = products[productIndex].quantity * 1 + (typeof quantity === "undefined" ? 1 : quantity * 1);
-                    } else {
-                        products[productIndex].quantity = typeof quantity === "undefined" ? products[productIndex].quantity * 1 + 1 : quantity * 1;
-                    }
-                    setAllProducts(products);
-                    return true;
-                };
-                var getTotalPrice = function () {
-                    var products = getAllItems();
-                    var total = 0;
-                    $.each(products, function (index, value) {
-                        total += value.quantity * value.price;
-                        total = total * 1;
-                    });
-                    return total;
-                };
+    <!-- endbuild -->
 
-                objReturn.getTotalPrice = getTotalPrice;
-
-                objReturn.updatePoduct = updatePoduct;
-                objReturn.getAllItems = getAllItems;
-                objReturn.itemsId = itemsId;
-                objReturn.getSubTotal = getSubTotal;
-                return objReturn;
-            })();
-
-            // list Items
-            var listItems = function () {
-                const $lisItems = $(".lisItems");
-                const rincian = $(".rincian-belanja");
-
-                var items = Keranjang.getAllItems();
-
-                $.each(items, function () {
-                    $lisItems.append(`
-                                                  <li class="list-group-item d-flex justify-content-between align-items-center  " data-id="${this.id}" data-hrg="${this.price}">
-                                                      <div class="text d-flex flex-column">${this.name}<span class="badge bg-primary hrg">Rp ${(this.price / 1000).toFixed(3)}</span>
-                                                      </div>
-                                                      <div class="btn-group" role="group" aria-label="Basic example">
-                                                          <button class="btn btn-outline-secondary classProductTotal${this.id}" disabled>Rp ${((this.price * this.quantity) / 1000).toFixed(3)}</button>
-                                                          <input   type="number" style="width: 65px; text-align: center" class="form-control classProductQuantity form-control-sm mx-2 " min="1" value="${this.quantity}" />
-                                                       </div>
-                                                  </li>
-                                          `);
-                });
-
-                rincian.append(`
-                                          <div class="total-belanja d-flex justify-content-between">
-                                              <h5>Sub Total</h5>
-                                              <h3 id="subtotal">${Keranjang.getTotalPrice()}</h3>
-                                          </div>
-                                          <div class="total-belanja d-flex justify-content-between">
-                                              <h5>Cash</h5>
-                                              <h3 id="cash"></h3>
-                                          </div>
-
-                                          `);
-            };
-
-            var updateCart = function () {
-                $.each($(".classProductQuantity"), function () {
-                    var id = $(this).closest("li").data("id");
-                    Keranjang.updatePoduct(id, $(this).val());
-                });
-            };
-            var getSubTotal = function () {
-                $("#subtotal").text(`Rp ${(Keranjang.getSubTotal() / 1000).toFixed(3)}`);
-            };
-
-            //tambah banyak barang
-            $(document).on("input", ".classProductQuantity", function () {
-                var price = $(this).closest("li").data("hrg");
-                var id = $(this).closest("li").data("id");
-                var quantity = $(this).val();
-                $(this)
-                    .parent("button")
-                    .add(`.classProductTotal${id}`)
-                    .text(`Rp. ${((price * quantity) / 1000).toFixed(3)} `);
-                Keranjang.updatePoduct(id, quantity);
-                getSubTotal();
-            });
-            $(document).on("keypress", ".classProductQuantity", function (evt) {
-                if (evt.keyCode >= 48 && evt.keyCode <= 57) {
-                    return;
-                }
-                evt.preventDefault();
-            });
-            // / tambah banyak barang
-
-            // pemabayran
-            $(document).on("input", ".jumlahuang", function () {
-                var quantity = $(this).val();
-                $(this)
-                    .parent("h3")
-                    .add("#cash")
-                    .text(`Rp. ${(quantity / 1000).toFixed(3)} `);
-            });
-            $(document).on("click", "#uanguang", function () {
-                var quantity = $(this).val();
-                $(".jumlahuang").val(quantity);
-                console.log(quantity);
-            });
-
-            updateCart();
-            listItems();
-            getSubTotal();
-        </script>
-        <!-- endbuild -->
-
-        <!-- Main JS -->
-        <script src="../assets/js/main.js"></script>
-    </body>
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+  </body>
 </html>
